@@ -5,29 +5,33 @@ class Solution {
 
         for (int i = 0; i < s.length(); i++) {
 
-            for (int j = s.length() - 1; j >= i; j--) {
+            for (int j=0; j < s.length(); j++) {
 
                 int start = i;
                 int end = j;
                 boolean palindrome = true;
-
-                while (start < end) {
-
-                    if (s.charAt(start) != s.charAt(end)) {
-                        palindrome = false;
-                        break;
-                    }
-
-                    start++;
-                    end--;
-                }
-
-                if (palindrome && (j - i + 1) > ans.length()) {
-                    ans = s.substring(i, j + 1);
-                }
-            }
+            
+             
+             while(start<end){
+                if(s.charAt(start)!=s.charAt(end)){
+                palindrome = false;
+                break;
+             }
+              start++;
+              end--;
         }
-
-        return ans;
+        if(palindrome && (j-i+1)>ans.length()){
+            ans = s.substring(i,j+1);
+        }
+        
     }
 }
+
+      return ans;
+}
+}
+
+
+        
+
+                
